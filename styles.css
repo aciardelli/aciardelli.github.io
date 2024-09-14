@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-one: #FEE6BB;
+    --color-two: #EEC492;
+    --color-three: #F2C864;
+    --color-four: #F48676;
+    --color-five: #6D9496;
+    --color-six: #0B4251;
+}
+
+/* Landing Section */
+
+.landing {
+    height: 100vh;
+    background-color: #f1f1f1;
+    background-image: url('./images/sunset.JPG');
+    background-size: cover;
+}
+
+.landing-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 10vh;
+
+    /* Add these properties for the blur effect */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight white background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    
+    /* Optional: add a subtle border or shadow for definition */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.landing-nav .logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.landing-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    color: white;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    width: 50%;
+}
+
+.info-box h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.info-box p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* About Section */
+
+.about {
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+/* Projects Section */
+
+.projects {
+    height: 100vh;
+    background-color: #f1f1f1;
+}
