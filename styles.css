@@ -278,3 +278,44 @@
     color: var(--offwhite);
     text-align: left;
 }
+
+/* Contact Section */
+
+.contact {
+    height: 50vh;
+    background-color: var(--color-six);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--offwhite)
+}
+
+.contact-memo h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.contact-points {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    color: var(--offwhite);
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    width: 50%;
+    height: 7.5vh;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--color-five);
+    margin-bottom: 3rem;
+    color: var(--offwhite);
+    text-align: left;
+}
