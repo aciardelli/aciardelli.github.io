@@ -4,19 +4,25 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
-    --color-one: #FEE6BB;
+    /* --color-one: #FEE6BB;
     --color-two: #EEC492;
     --color-three: #F2C864;
     --color-four: #F48676;
     --color-five: #6D9496;
-    --color-six: #0B4251;
+    --color-six: #0B4251; */
 
-    /* --color-one: #CCCCCA;
-    --color-two: #D9B991;
-    --color-three: #736A62;
-    --color-four: #D9895B;
-    --color-five: #F25F29; */
+    --color-one: #303234;
+    --color-two: #7A6757;
+    --color-three: #E68341;
+    --color-four: #A8ABAE;
+    --color-five: #BDBDBA;
+
+
     --offwhite: #f2f2f2;
 }
 
@@ -38,6 +44,7 @@ body {
 .landing-nav {
     display: flex;
     justify-content: space-between;
+    /* justify-content: center; */
     align-items: center;
     padding: 0 5%;
     height: 10vh;
@@ -50,6 +57,11 @@ body {
     /* Optional: add a subtle border or shadow for definition */
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* position: fixed;
+    top: 0;           
+    width: 100%;
+    z-index: 100; */
 }
 
 .landing-nav .logo {
@@ -98,7 +110,8 @@ body {
 
 .about {
     height: 100vh;
-    background-color: var(--color-six);
+    /* background-color: var(--color-six); */
+    background-color: var(--color-one);
     /* background: linear-gradient(0deg, var(--color-five), var(--color-six)); */
     display: flex;
     flex-direction: row;
@@ -107,7 +120,7 @@ body {
     align-items: center;
 }
 
-.about-images {
+/* .about-images {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,6 +148,41 @@ body {
 .about-images img:nth-child(even) {
     align-self: flex-end;
     right: -10%;
+} */
+
+.about-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.about-images-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}
+
+.about-images-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}
+
+.about-images img {
+    height: 40vh;
+    width: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: var(--color-three) 0px 22px 70px 4px;
 }
 
 .about-text {
@@ -153,25 +201,29 @@ body {
     width: 3rem;
     height: 0.5rem;
     margin-bottom: 10px;
-    background-color: var(--color-four);
-    border: 1px solid var(--color-four);
+    background-color: var(--color-three);
+    border: 1px solid var(--color-three);
 }
 
 .about-text h2 {
     font-size: 3rem;
     margin-bottom: 3rem;
+    color: var(--offwhite)
 }
 
 .about-text p {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color: var(--color-five)
+
 }
 
 /* Experience Section */
 
 .experience {
     height: 100vh;
-    background-color: var(--color-five);
+    background-color: var(--color-two);
+
 }
 
 .experience-header {
@@ -187,14 +239,15 @@ body {
 .experience-header hr {
     width: 3rem;
     height: 0.5rem;
-    background-color: var(--color-four);
     margin-bottom: 10px;
-    border: 1px solid var(--color-four);
+    background-color: var(--color-three);
+    border: 1px solid var(--color-three);
 }
 
 .experience-header h2 {
     font-size: 3rem;
     margin-bottom: 3rem;
+    color: var(--offwhite);
 }
 
 .experience-container {
@@ -211,15 +264,16 @@ body {
     align-items: center;
     width: 75%;
     height: 20vh;
-    border-radius: 10px 0px;
+    border-radius: 10px;
     padding: 20px;
-    background-color: var(--color-six);
+    background-color: var(--color-one);
     margin-bottom: 3rem;
     color: var(--offwhite);
 }
 
 .experience-box:hover {
-    box-shadow: 15px 15px 0px var(--color-three);
+    /* box-shadow: 15px 15px 0px var(--color-three); */
+    box-shadow: var(--color-three) 0px -50px 36px -28px inset;
     transition: 0.5s;
 
 }
@@ -231,7 +285,7 @@ body {
 
 .experience-box h3 {
     margin-bottom: 20px;
-    color: var(--color-one);
+    color: var(--color-five);
 }
 
 .experience-img {
@@ -262,7 +316,7 @@ body {
 
 .project {
     height: 90vh;
-    background-color: var(--color-five);
+    background-color: var(--color-two);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -281,9 +335,9 @@ body {
 .project-header hr {
     width: 3rem;
     height: 0.5rem;
-    background-color: var(--color-four);
     margin-bottom: 10px;
-    border: 1px solid var(--color-four);
+    background-color: var(--color-three);
+    border: 1px solid var(--color-three);
 }
 
 .project-header h2 {
@@ -307,10 +361,16 @@ body {
     height: 50vh;
     border-radius: 10px;
     padding: 20px;
-    background-color: var(--color-six);
+    background-color: var(--color-one);
     margin-bottom: 3rem;
     color: var(--offwhite);
     text-align: left;
+    /* box-shadow: var(--color-three) 0px 50px 100px -20px, var(--color-three) 0px 30px 60px -30px; */
+}
+
+.project-box:hover {
+    transition: 0.5s;
+    box-shadow: var(--color-three) 0px -50px 36px -28px inset;
 }
 
 .project-info {
@@ -319,15 +379,15 @@ body {
 
 .project-info h3 {
     margin-bottom: 20px;
-    color: var(--color-one);
+    color: var(--color-five);
 }
 
 .project-info hr {
     width: 50%;
     height: 2px;
-    background-color: var(--color-four);
+    background-color: var(--color-three);
     margin-bottom: 10px;
-    border: 1px solid var(--color-four);
+    border: 1px solid var(--color-three);
 }
 
 .project-info h3 {
@@ -344,7 +404,7 @@ body {
 
 .contact {
     height: 50vh;
-    background-color: var(--color-six);
+    background-color: var(--color-one);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -375,7 +435,7 @@ body {
     height: 7.5vh;
     border-radius: 10px;
     padding: 20px;
-    background-color: var(--color-five);
+    background-color: var(--color-two);
     margin-bottom: 3rem;
     color: var(--offwhite);
     text-align: left;
