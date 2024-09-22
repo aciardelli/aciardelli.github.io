@@ -58,10 +58,10 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-    /* position: fixed;
+    position: fixed;
     top: 0;           
     width: 100%;
-    z-index: 100; */
+    z-index: 100;
 }
 
 .landing-nav .logo {
@@ -269,6 +269,7 @@ body {
     background-color: var(--color-one);
     margin-bottom: 3rem;
     color: var(--offwhite);
+    border: 2px solid var(--color-five)
 }
 
 .experience-box:hover {
@@ -365,6 +366,7 @@ body {
     margin-bottom: 3rem;
     color: var(--offwhite);
     text-align: left;
+    border: 2px solid var(--color-five);
     /* box-shadow: var(--color-three) 0px 50px 100px -20px, var(--color-three) 0px 30px 60px -30px; */
 }
 
@@ -412,6 +414,10 @@ body {
     color: var(--offwhite)
 }
 
+.contact-memo {
+    justify-content: space-around;
+}
+
 .contact-memo h2 {
     font-size: 3rem;
     margin-bottom: 3rem;
@@ -420,23 +426,24 @@ body {
 .contact-points {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 50%;
     color: var(--offwhite);
+    gap: 2rem;
 }
 
 .contact-item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     text-align: left;
     width: 50%;
     height: 7.5vh;
     border-radius: 10px;
     padding: 20px;
     background-color: var(--color-two);
-    margin-bottom: 3rem;
     color: var(--offwhite);
     text-align: left;
 }
