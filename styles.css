@@ -9,20 +9,11 @@ html {
 }
 
 :root {
-    /* --color-one: #FEE6BB;
-    --color-two: #EEC492;
-    --color-three: #F2C864;
-    --color-four: #F48676;
-    --color-five: #6D9496;
-    --color-six: #0B4251; */
-
     --color-one: #303234;
     --color-two: #7A6757;
     --color-three: #E68341;
     --color-four: #A8ABAE;
     --color-five: #BDBDBA;
-
-
     --offwhite: #f2f2f2;
 }
 
@@ -39,29 +30,27 @@ body {
     background-color: #f1f1f1;
     background-image: url('./images/sunset.JPG');
     background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .landing-nav {
     display: flex;
     justify-content: space-between;
-    /* justify-content: center; */
     align-items: center;
     padding: 0 5%;
     height: 10vh;
-
-    /* Add these properties for the blur effect */
-    background-color: rgba(255, 255, 255, 0.1); /* Slight white background */
+    background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* For Safari support */
-    
-    /* Optional: add a subtle border or shadow for definition */
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
     position: fixed;
     top: 0;           
     width: 100%;
     z-index: 100;
+    animation: fadeInDown 1s ease-out;
 }
 
 .landing-nav .logo {
@@ -76,7 +65,14 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px;
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
 }
+
+.landing-nav a:nth-child(1) { animation-delay: 0.2s; }
+.landing-nav a:nth-child(2) { animation-delay: 0.4s; }
+.landing-nav a:nth-child(3) { animation-delay: 0.6s; }
+.landing-nav a:nth-child(4) { animation-delay: 0.8s; }
 
 .landing-container {
     display: flex;
@@ -94,6 +90,8 @@ body {
     align-items: center;
     height: 40vh;
     width: 50%;
+    animation: fadeInUp 1s ease-out 1s forwards;
+    opacity: 0;
 }
 
 .info-box h2 {
@@ -106,49 +104,73 @@ body {
     margin-bottom: 20px;
 }
 
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .landing {
+        height: 100vh;
+        background-color: #f1f1f1;
+        background-image: url('./images/sunset_ios.JPG');
+    }
+
+    .landing-nav {
+        height: 15vh;
+        display: none;
+    }
+
+    .landing-nav .logo {
+        font-size: 1rem;
+    }
+
+    .landing-nav a {
+        font-size: 1rem;
+    }
+
+    .info-box {
+        width: 80%;
+    }
+
+    .info-box h2 {
+        font-size: 2rem;
+    }
+
+}
+
 /* About Section */
 
 .about {
     height: 100vh;
-    /* background-color: var(--color-six); */
     background-color: var(--color-one);
-    /* background: linear-gradient(0deg, var(--color-five), var(--color-six)); */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    /* justify-content: center; */
     align-items: center;
 }
-
-/* .about-images {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 30%;
-    height: 100%;
-    border-radius: 10px;
-    padding: 20px;
-    position: relative;
-}
-
-.about-images img {
-    height: 30vh;
-    width: auto;
-    object-fit: contain;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.about-images img:nth-child(odd) {
-    align-self: flex-start;
-    left: -10%;
-}
-
-.about-images img:nth-child(even) {
-    align-self: flex-end;
-    right: -10%;
-} */
 
 .about-images {
     display: flex;
@@ -183,6 +205,7 @@ body {
     margin-bottom: 20px;
     position: relative;
     box-shadow: var(--color-three) 0px 22px 70px 4px;
+    border: 2px solid var(--color-five)
 }
 
 .about-text {
@@ -215,7 +238,34 @@ body {
     font-size: 1.5rem;
     margin-bottom: 20px;
     color: var(--color-five)
+}
 
+@media screen and (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .about-images {
+        display: none;
+    }
+
+    .about-images img {
+        height: 20vh;
+    }
+
+    .about-text {
+        width: 100%;
+        height: 50%;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
 }
 
 /* Experience Section */
@@ -273,7 +323,6 @@ body {
 }
 
 .experience-box:hover {
-    /* box-shadow: 15px 15px 0px var(--color-three); */
     box-shadow: var(--color-three) 0px -50px 36px -28px inset;
     transition: 0.5s;
 
@@ -311,6 +360,33 @@ body {
     width: 35%;
     height: 100%;
     padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .experience {
+        height: 100vh;
+    }
+
+    .experience-header h2 {
+        font-size: 2rem;
+    }
+
+    .experience-box {
+        width: 90%;
+    }
+
+    .experience-box p {
+        font-size: 1rem;
+    }
+
+    .experience-info-primary {
+        width: 100%;
+    }
+
+    .experience-info-secondary {
+        width: 100%;
+    }
+    
 }
 
 /* Projects Section */
@@ -367,7 +443,6 @@ body {
     color: var(--offwhite);
     text-align: left;
     border: 2px solid var(--color-five);
-    /* box-shadow: var(--color-three) 0px 50px 100px -20px, var(--color-three) 0px 30px 60px -30px; */
 }
 
 .project-box:hover {
@@ -400,6 +475,33 @@ body {
 .project-info p {
     margin-bottom: 20px;
     font-size: 1.25rem;
+}
+
+@media screen and (max-width: 768px) {
+    .project {
+        height: 200vh;
+    }
+
+    .project-header h2 {
+        font-size: 2rem;
+    }
+
+    .project-container {
+        flex-direction: column;
+    }
+
+    .project-box {
+        width: 80%;
+        height: 50vh;
+    }
+
+    .project-info h3 {
+        font-size: 1rem;
+    }
+
+    .project-info p {
+        font-size: 1rem;
+    }
 }
 
 /* Contact Section */
@@ -446,4 +548,24 @@ body {
     background-color: var(--color-two);
     color: var(--offwhite);
     text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    .contact {
+        height: 50vh;
+        flex-direction: column;
+    }
+
+    .contact-memo h2 {
+        font-size: 2rem;
+    }
+
+    .contact-points {
+        width: 100%;
+    }
+
+    .contact-item {
+        width: 80%;
+    }
+    
 }
