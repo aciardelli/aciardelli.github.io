@@ -169,7 +169,7 @@ body {
 
     .info-box {
         width: 80%;
-        align-items: center;
+        text-align: center;
     }
 
     .info-box h2 {
