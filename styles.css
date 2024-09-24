@@ -169,10 +169,15 @@ body {
 
     .info-box {
         width: 80%;
+        align-items: center;
     }
 
     .info-box h2 {
         font-size: 2rem;
+    }
+
+    .info-box p {
+        font-size: 1rem;
     }
 
 }
